@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Transaction details of the customer, products and the employess in the date interval , used to track the sales of the employee
+    columns:
+      - name: Product ID
+        description: The surrogate key of the customer
+        tests:
+          - not_null
+          - unique
+      - name: customerid
+        description: The business / source key of the customer
+        tests:
+          - not_null
+          - unique
+
+

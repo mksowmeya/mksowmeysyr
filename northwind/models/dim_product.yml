@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: Dimension table for products.
+    columns:
+      - name: productid
+        description: Primary key of the product.
+      # Add other columns as needed
