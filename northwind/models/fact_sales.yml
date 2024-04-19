@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Transaction details of the customer, products, and employees in the date interval, used to track the sales of the employee
+    columns:
+      - name: ProductId
+        description: Source key used for drill through
+        tests:
+            - unique
+            - not_null
+      - name: customerkey
+        description: Dimension FK for dim_customer
+      - name: productkey
+        description: Dimension FK for dim_Products
+      - name: employeekey
+        description: Dimension FK for dim_employee
+      - name: orderdate
+        description: Date ordered by the customer
+        tests:
+            - not_null
+      - name: orderid
+        description: ID of the order
+        tests:
+            - unique
+            - not_null
+      - name: quantity
+        description: Total quantity of the order
+      - name: extendedpriceamount
+        description: Total amount costed with the quantity
+        tests:
+            - not_null
+      - name: discountamount
+        description: Total amount costed after the discount percentage
+        tests:
+            - not_null
+      - name: soldamount
+        description: The amount in which the product was sold with the discounted price
+        tests:
+            - not_null
